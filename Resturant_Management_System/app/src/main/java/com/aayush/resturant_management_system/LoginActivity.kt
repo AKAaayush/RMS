@@ -7,10 +7,18 @@ import android.widget.Button
 
 
 class LoginActivity : AppCompatActivity() {
+private lateinit var  btnsignup : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        btnsignup = findViewById(R.id.btn_signup)
+
+        btnsignup.setOnClickListener(){
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
 
 
     }
