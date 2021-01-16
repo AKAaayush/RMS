@@ -15,6 +15,7 @@ class RegisterActivity : AppCompatActivity() {
 
         btn_signin = findViewById(R.id.btn_signin)
 
+        //open login activity
         btn_signin.setOnClickListener(){
             startActivity(Intent(this, LoginActivity::class.java))
         }

@@ -14,7 +14,8 @@ private lateinit var  btnsignup : Button
         setContentView(R.layout.activity_login)
 
         btnsignup = findViewById(R.id.btn_signup)
-
+        
+//open signup activity
         btnsignup.setOnClickListener(){
             startActivity(Intent(this, RegisterActivity::class.java))
         }
