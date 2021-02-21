@@ -1,4 +1,4 @@
-package com.aayush.resturant_management_system.RMS
+package com.aayush.resturant_management_system.RMS.`object`
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

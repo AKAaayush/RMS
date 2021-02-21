@@ -106,16 +106,16 @@
                 app:layout_constraintHorizontal_bias="0.749"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="344dp"
-                android:layout_height="197dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:transitionName="logo"
-                app:layout_constraintHorizontal_bias="0.492"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView"-->
+<!--                android:layout_width="344dp"-->
+<!--                android:layout_height="197dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:transitionName="logo"-->
+<!--                app:layout_constraintHorizontal_bias="0.492"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"/>-->
 <!--                app:srcCompat="@drawable/backg" />-->
 
 
