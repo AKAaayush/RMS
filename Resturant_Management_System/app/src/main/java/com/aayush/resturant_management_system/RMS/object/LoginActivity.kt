@@ -1,9 +1,10 @@
-package com.aayush.resturant_management_system
+package com.aayush.resturant_management_system.RMS.`object`
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.aayush.resturant_management_system.R
 
 
 class LoginActivity : AppCompatActivity() {
