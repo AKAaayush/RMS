@@ -8,6 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#fece2f"
         tools:context=".RMS.object.RegisterActivity">
 
 
@@ -18,20 +19,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="82dp"
             android:text="Already have an account?"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.397"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
 
         <EditText
             android:id="@+id/signup_fullname"
             android:layout_width="327dp"
             android:layout_height="75dp"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/gray"
             android:drawableLeft="@drawable/profile_icon"
             android:drawablePadding="20dp"
-            android:drawableTint="@color/colorAccent"
+            android:drawableTint="@color/gray"
             android:ems="10"
             android:hint="Full Name"
             android:inputType="textPersonName"
@@ -48,10 +49,10 @@
             android:layout_width="327dp"
             android:layout_height="75dp"
             android:layout_marginTop="40dp"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/gray"
             android:drawableLeft="@drawable/profile_icon"
             android:drawablePadding="20dp"
-            android:drawableTint="@color/colorAccent"
+            android:drawableTint="@color/gray"
             android:ems="10"
             android:hint="Address"
             android:inputType="textPersonName"
@@ -69,10 +70,10 @@
             android:layout_width="327dp"
             android:layout_height="75dp"
             android:layout_marginTop="32dp"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/gray"
             android:drawableLeft="@drawable/email_icon"
             android:drawablePadding="20dp"
-            android:drawableTint="@color/colorAccent"
+            android:drawableTint="@color/gray"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
@@ -89,10 +90,10 @@
             android:layout_width="327dp"
             android:layout_height="75dp"
             android:layout_marginTop="36dp"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/gray"
             android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
             android:drawablePadding="20dp"
-            android:drawableTint="@color/colorAccent"
+            android:drawableTint="@color/black"
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
@@ -109,10 +110,10 @@
             android:layout_width="327dp"
             android:layout_height="75dp"
             android:layout_marginTop="144dp"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/gray"
             android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
             android:drawablePadding="20dp"
-            android:drawableTint="@color/colorAccent"
+            android:drawableTint="@color/gray"
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
@@ -129,7 +130,7 @@
             android:layout_width="322dp"
             android:layout_height="40dp"
             android:layout_marginTop="56dp"
-            android:background="@color/colorAccent"
+            android:backgroundTint="@color/gray"
             android:text="Sign-Up"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -147,24 +148,25 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:text="Sign In"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/gray"
             android:textSize="13dp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.749"
+            app:layout_constraintHorizontal_bias="0.793"
             app:layout_constraintStart_toStartOf="parent" />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView"-->
-<!--            android:layout_width="344dp"-->
-<!--            android:layout_height="197dp"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            android:transitionName="logo"-->
-<!--            app:layout_constraintHorizontal_bias="0.492"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"/>-->
+        <ImageView
+            android:id="@+id/imageView"
+            android:src="@drawable/logo"
+            android:layout_width="344dp"
+            android:layout_height="197dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:transitionName="logo"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
 
 

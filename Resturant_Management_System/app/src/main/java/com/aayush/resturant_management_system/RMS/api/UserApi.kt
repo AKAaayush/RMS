@@ -15,7 +15,7 @@ interface UserApi {
     suspend fun userAdd(@Body users: User): Response<RegisterResponse>
 
     @FormUrlEncoded
-    @POST("auth/login")
+    @POST("user/login")
     suspend fun checkUser(
         @Field("email") email:String,
         @Field("password") password:String

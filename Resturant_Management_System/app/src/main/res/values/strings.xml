@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Resturant_Management_System</string>
+    <string name="skip_intro">skip_intro</string>
+    <string name="next">next</string>
+    <string name="app_name">RMS</string>
 </resources>

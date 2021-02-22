@@ -1,6 +1,5 @@
 package com.aayush.resturant_management_system.RMS.`object`
 
-import android.animation.ValueAnimator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +9,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import com.aayush.resturant_management_system.R
+import com.aayush.resturant_management_system.SliderActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -34,7 +34,7 @@ class SplashActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     this@SplashActivity,
-                    LoginActivity::class.java
+                    SliderActivity::class.java
                 )
             )
             finish()
