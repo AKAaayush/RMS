@@ -14,11 +14,10 @@ interface UserApi {
     @POST("user/add")
     suspend fun userAdd(@Body users: User): Response<RegisterResponse>
 
-    @FormUrlEncoded
+
     @POST("user/login")
     suspend fun checkUser(
-        @Field("email") email:String,
-        @Field("password") password:String
+      @Body user:User
     ): Response<LoginResponse>
 
 }

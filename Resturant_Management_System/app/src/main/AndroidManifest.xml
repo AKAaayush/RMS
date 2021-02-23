@@ -16,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Resturant_Management_System"
         android:usesCleartextTraffic="true">
-        <activity android:name=".slide_item_container"></activity>
         <activity android:name=".SliderActivity" />
         <activity android:name=".RMS.object.SplashActivity">
             android:theme = "@style/Theme.AppCompat.DayNight.NoActionBar"

@@ -16,9 +16,9 @@ class UserRepository: ApiRequest() {
             myApi.userAdd(user)
         }
     }
-    suspend fun checkUser(email:String,password:String): LoginResponse {
+    suspend fun checkUser(user: User): LoginResponse {
         return apiRequest {
-            myApi.checkUser(email, password)
+            myApi.checkUser(user)
         }
     }
 }

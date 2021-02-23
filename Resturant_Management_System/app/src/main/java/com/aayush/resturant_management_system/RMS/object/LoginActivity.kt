@@ -10,6 +10,7 @@ import androidx.core.app.ActivityCompat
 import com.aayush.resturant_management_system.MainActivity
 import com.aayush.resturant_management_system.R
 import com.aayush.resturant_management_system.RMS.api.ServiceBuilder
+import com.aayush.resturant_management_system.RMS.model.User
 import com.aayush.resturant_management_system.RMS.repository.UserRepository
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
@@ -19,16 +20,16 @@ import kotlinx.coroutines.withContext
 
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var login_email : EditText
-    private  lateinit var login_password : EditText
-    private  lateinit var btn_login : Button
-    private lateinit var  btnsignup : Button
+    private lateinit var login_email: EditText
+    private lateinit var login_password: EditText
+    private lateinit var btn_login: Button
+    private lateinit var btnsignup: Button
     private lateinit var linearlayout: LinearLayout
 
     private val permissions = arrayOf(
-        android.Manifest.permission.CAMERA,
-        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        android.Manifest.permission.ACCESS_FINE_LOCATION
+            android.Manifest.permission.CAMERA,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            android.Manifest.permission.ACCESS_FINE_LOCATION
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,9 +67,9 @@ class LoginActivity : AppCompatActivity() {
         var hasPermission = true
         for (permission in permissions) {
             if (ActivityCompat.checkSelfPermission(
-                    this,
-                    permission
-                ) != PackageManager.PERMISSION_GRANTED
+                            this,
+                            permission
+                    ) != PackageManager.PERMISSION_GRANTED
             ) {
                 hasPermission = false
                 break
@@ -84,44 +85,43 @@ class LoginActivity : AppCompatActivity() {
     private fun login() {
         val email = login_email.text.toString()
         val password = login_password.text.toString()
+        Toast.makeText(this, "${email + password}", Toast.LENGTH_SHORT).show()
+        val user=User(email=email,password = password)
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val repository = UserRepository()
-                val response = repository.checkUser(email, password)
+                val response = repository.checkUser(user)
                 if (response.success == true) {
                     ServiceBuilder.token = "Bearer " + response.token
                     startActivity(
-                        Intent(
-                            this@LoginActivity,
-                            MainActivity::class.java
-                        )
+                            Intent(
+                                    this@LoginActivity,
+                                    MainActivity::class.java
+                            )
                     )
                     finish()
                 } else {
                     withContext(Dispatchers.Main) {
                         val snack =
-                            Snackbar.make(
-                                linearlayout,
-                                "Invalid credentials",
-                                Snackbar.LENGTH_LONG
-                            )
+                                Snackbar.make(
+                                        linearlayout,
+                                        "Invalid credentials",
+                                        Snackbar.LENGTH_LONG
+                                )
                         snack.setAction("OK", View.OnClickListener {
                             snack.dismiss()
                         })
                         snack.show()
                     }
                 }
-
             } catch (ex: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(
-                        this@LoginActivity,
-                        "Login error", Toast.LENGTH_SHORT
+                            this@LoginActivity,
+                            "login error", Toast.LENGTH_SHORT
                     ).show()
                 }
             }
         }
     }
-
-
 }
