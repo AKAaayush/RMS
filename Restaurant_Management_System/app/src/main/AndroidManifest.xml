@@ -16,19 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Resturant_Management_System"
         android:usesCleartextTraffic="true">
+        <activity android:name=".menulayout"></activity>
         <activity android:name=".RMS.object.SliderActivity" />
         <activity android:name=".RMS.object.SplashActivity">
             android:theme = "@style/Theme.AppCompat.DayNight.NoActionBar"
-
         </activity>
         <activity android:name=".RMS.object.RegisterActivity" />
         <activity android:name=".RMS.object.LoginActivity" />
-        <activity android:name=".RMS.object.MainActivity" >
+        <activity android:name=".RMS.object.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
