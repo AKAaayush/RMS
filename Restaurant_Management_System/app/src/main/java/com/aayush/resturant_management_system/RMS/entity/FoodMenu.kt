@@ -1,7 +1,12 @@
 package com.aayush.resturant_management_system.RMS.entity
 
- data class FoodMenu (
-         val _id : String? = null,
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+  class FoodMenu (
+    @PrimaryKey(autoGenerate = false)
+         val _id : String = "",
          val menu_name : String? = null,
          val menu_title : String? = null,
          val menu_price : String? = null,
