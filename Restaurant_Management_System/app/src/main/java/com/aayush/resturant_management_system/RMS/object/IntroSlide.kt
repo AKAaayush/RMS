@@ -1,4 +1,4 @@
-package com.aayush.resturant_management_system
+package com.aayush.resturant_management_system.RMS.`object`
 
 data class IntroSlide (
     val title: String,

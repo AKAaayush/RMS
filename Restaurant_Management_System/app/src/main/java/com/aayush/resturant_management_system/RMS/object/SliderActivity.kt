@@ -1,4 +1,4 @@
-package com.aayush.resturant_management_system
+package com.aayush.resturant_management_system.RMS.`object`
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +11,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.aayush.resturant_management_system.R
-import com.aayush.resturant_management_system.RMS.`object`.LoginActivity
 import com.aayush.resturant_management_system.RMS.adapter.IntroSliderAdapter
 import com.google.android.material.button.MaterialButton
 
