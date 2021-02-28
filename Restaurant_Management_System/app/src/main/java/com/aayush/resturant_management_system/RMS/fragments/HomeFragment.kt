@@ -19,13 +19,14 @@ private const val ARG_PARAM2 = "param2"
 class HomeFragment : Fragment() {
 
 
-
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         return view
     }
+}
 //
 //    fun getData(){ try {
 //
