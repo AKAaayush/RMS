@@ -23,12 +23,15 @@ class FoodMenuAdapter (
             fun bind(foodMenu:FoodMenu, index: Int) {
                 val menuname = view.findViewById<TextView>(R.id.mname)
                 val mtitle = view.findViewById<TextView>(R.id.mtitle)
+                val foodtaste = view.findViewById<TextView>(R.id.foodtaste)
 
                 val imageView = view.findViewById<ImageView>(R.id.imageView)
 //
                 val _id=foodMenu._id
                 menuname.text = foodMenu.menu_name
-                mtitle.text = foodMenu.menu_title.toString()
+                mtitle.text = foodMenu.menu_title
+                foodtaste.text = foodMenu.menu_desc
+
                 val imagePath = ServiceBuilder.loadImagepath() + foodMenu.menu_image
                 if (!foodMenu.menu_image.equals("no-photo.jpg")) {
                     Glide.with(mContext)

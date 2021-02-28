@@ -3,7 +3,7 @@ package com.aayush.resturant_management_system.RMS.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.aayush.resturant_management_system.RMS.model.User
+import com.aayush.resturant_management_system.RMS.entity.User
 
 
 //room db

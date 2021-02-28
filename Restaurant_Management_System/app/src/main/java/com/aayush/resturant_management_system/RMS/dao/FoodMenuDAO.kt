@@ -6,10 +6,16 @@ import androidx.room.Insert
 import androidx.room.Query
 
 @Dao
-interface FoodMemuDAO {
+interface FoodMenuDAO {
    @Query("Delete from FoodMenu")
     suspend fun deleteFoodMenu()
 
+
+
+
+
+
+
     @Insert
-    suspend fun insertWorkOutData(workout: MutableList<FoodMenu>?)
+    suspend fun insertfoodmenu(foodmenu: MutableList<FoodMenu>?)
 }

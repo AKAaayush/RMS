@@ -5,39 +5,63 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.aayush.resturant_management_system.R
-import com.aayush.resturant_management_system.RMS.repository.UserRepository
+import com.aayush.resturant_management_system.RMS.adapter.FoodMenuAdapter
+import com.aayush.resturant_management_system.RMS.database.FoodMenuDatabase
+import com.aayush.resturant_management_system.RMS.entity.FoodMenu
+import com.aayush.resturant_management_system.RMS.repository.FoodMenuRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+
 
 class HomeFragment : Fragment() {
+    private lateinit var menurecycler: RecyclerView
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        menurecycler=view.findViewById(R.id.menurecycler)
 
-        return view
+        getData()
+        return view;
+    }
+
+    fun getData(){
+        try{
+            CoroutineScope(Dispatchers.IO).launch {
+                val foodMenuRepository = FoodMenuRepository()
+                val response = foodMenuRepository.getFoodMenuApiData()
+                if(response.success==true){
+                    withContext(Dispatchers.Main){
+                        println(response)
+                        val foodmenuitemlist = response.data
+                        FoodMenuDatabase.getInstance(requireContext()).getFoodMenuDAO().deleteFoodMenu()
+                        FoodMenuDatabase.getInstance(requireContext()).getFoodMenuDAO().insertfoodmenu(response.data)
+                        Toast.makeText(context, "$foodmenuitemlist", Toast.LENGTH_SHORT).show()
+                        val adapter = FoodMenuAdapter(
+                                foodmenuitemlist as ArrayList<FoodMenu>,
+                                requireContext()
+                        )
+                        menurecycler.layoutManager = LinearLayoutManager(context)
+                        menurecycler.adapter = adapter
+                    }
+                }
+            }
+        }catch (ex: Exception){
+            Toast.makeText(
+                    context,
+                    "Error : ${ex.toString()}", Toast.LENGTH_SHORT
+            ).show()
+        }
+
     }
 }
-//
-//    fun getData(){ try {
-//
-//    }
-//    catch (
-//
-//    )
-//    }
 
-//        try{
-//            CoroutineScope(Dispatchers.IO).launch {
-//                val recentItemRepository = UserRepository() val response = recentItemRepository.getAllRecentItems() if(response.success==true){ val recentitemlist = response.message  BuyerDb.getInstance(requireContext()).getItemListDAO().deleteItem() BuyerDb.getInstance(requireContext()).getItemListDAO().insertItemData(response.message) withContext(Main){  println(response) Toast.makeText(context, "$recentitemlist", Toast.LENGTH_SHORT).show() val adapter = RecentItemsAdapter( recentitemlist as ArrayList<RecentItemsModel>,  requireContext() ) recyclerViewrecentitem.layoutManager = LinearLayoutManager(context) recyclerViewrecentitem.adapter = adapter }  } } }catch (ex: Exception){ Toast.makeText( context,  "Error : ${ex.toString()}", Toast.LENGTH_SHORT  ).show() }
-//    }
 
