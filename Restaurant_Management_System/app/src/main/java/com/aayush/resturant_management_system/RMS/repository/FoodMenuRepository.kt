@@ -5,17 +5,11 @@ import com.aayush.resturant_management_system.RMS.api.UserApi
 
 
 class FoodMenuRepository {
-//
-//        val myApi= ServiceBuilder.buildServices(UserApi::class.java)
-//
-//        suspend fun registerUSer(user: User): RegisterResponse {
-//            return apiRequest {
-//                myApi.userAdd(user)
-//            }
-//        }
-//        suspend fun checkUser(user: User): LoginResponse {
-//            return apiRequest {
-//                myApi.checkUser(user)
-//            }
-//        }
+    private val WorkoutApi = ServiceBuilder.buildServices(WorkoutApi::class.java)
+
+    suspend fun  getWorkOutApiData(): WorkOutResponse{
+        return apiRequest {
+            WorkoutApi.addWorkout(ServiceBuilder.token!!)
+        }
     }
+}
