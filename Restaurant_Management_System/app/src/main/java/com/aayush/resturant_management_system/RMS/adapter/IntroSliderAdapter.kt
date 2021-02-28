@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.aayush.resturant_management_system.IntroSlide
+import com.aayush.resturant_management_system.RMS.`object`.IntroSlide
 import com.aayush.resturant_management_system.R
 
 class IntroSliderAdapter(private val introSlides: List<IntroSlide>):
